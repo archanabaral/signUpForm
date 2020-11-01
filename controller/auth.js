@@ -1,10 +1,11 @@
-const bcrypt = require("bcrypt");
+
 const User = require("../models/user");
 
 //Register User
 exports.register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
+    console.log(name)
     let user = await User.findOne({ email });
 
     if (user) {
@@ -18,7 +19,7 @@ exports.register = async (req, res) => {
       password,
     });
 
-    return res.status(200).json({ msg: "User created", data: user });
+    return res.status(200).json({ data: user });
   } catch (err) {
     console.log(err.message);
     res.status(500).send("server error");
