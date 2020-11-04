@@ -1,7 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: lightgreen;
-  text-align: center;
+  vertical-align: middle;
 }
 
 * {
@@ -32,7 +32,19 @@ input[type="password"]:focus {
   background-color: #ddd;
   outline: none;
 }
+.pass-wrapper {
+  position: relative;
+}
 
+i {
+  position: absolute;
+  top: 38%;
+  right: 16%;
+}
+i:hover {
+  color: #4caf50;
+  cursor: pointer;
+}
 /* Set a style for the submit button */
 .registerbtn {
   background-color: #4caf50;

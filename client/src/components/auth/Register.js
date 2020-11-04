@@ -1,6 +1,9 @@
 
 import React, { useContext, useState, useEffect } from "react"
 import AuthContext from "../../context/auth/AuthContext"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+const eye = <FontAwesomeIcon icon={faEye} />;
 
 const Register= () =>{
   const authContext = useContext(AuthContext)
@@ -19,9 +22,8 @@ const Register= () =>{
    email:"",
    password:"",
    rePassword:""
+})
 
-  
- })
  const {name, email, password, rePassword} = user
  const onChange = (event) => setUser({...user, [event.target.name]: event.target.value})
 
@@ -40,6 +42,11 @@ const Register= () =>{
      
    }
  }
+ const [passwordShown, setPasswordShown] = useState(false)
+
+ const togglePasswordVisibility = () => {
+   setPasswordShown(passwordShown? false: true)
+ }
 return(
       <form onSubmit={onSubmit} >
         <div className="container">
@@ -51,14 +58,16 @@ return(
          
            <lable htmlFor="email">Email Address</lable>
            <input type="text" placeholder="Enter Email" name="email" value={email} onChange={onChange}/>
-        
+           <div className="pass-wrapper">
            <lable htmlFor="Password">Password</lable>
            <input
-            type="password"
+              type={passwordShown ? "text" : "password"}
             placeholder="Enter Password"
             name="password"
             value={password} onChange={onChange}
            />
+            <i onClick= {togglePasswordVisibility}>{eye} </i>
+            </div>
            <lable htmlFor="rePassword">Confirm Password</lable>
            <input
             type="password"
