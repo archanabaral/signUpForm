@@ -1,20 +1,37 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: lightgreen;
-  vertical-align: middle;
+  text-align:center;
 }
 
 * {
   box-sizing: border-box;
 }
+.text{
+  text-align: center;
+}
+.text-primary {
+  color: green;
+ 
+}
 
 /* Add padding to containers */
 .container {
-  max-width: 350px;
-  padding: 30px;
+  max-width: 400px;
+  padding: 10px;
   background-color: white;
   display: inline-block;
+  text-align:left;
 }
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
 
 /* Full-width input fields */
 input[type="text"],
@@ -38,8 +55,8 @@ input[type="password"]:focus {
 
 i {
   position: absolute;
-  top: 38%;
-  right: 16%;
+  top: 40%;
+  right: 5%;
 }
 i:hover {
   color: #4caf50;

@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect } from "react"
 import AuthContext from "../../context/auth/AuthContext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import profile from "../assets/profile.jpg"
 const eye = <FontAwesomeIcon icon={faEye} />;
 
 const Register= () =>{
@@ -50,9 +51,12 @@ const Register= () =>{
 return(
       <form onSubmit={onSubmit} >
         <div className="container">
-           <h1>
-             Account Register
-           </h1>
+          <h1 className="text">
+            Account <span className="text-primary">Register</span>
+          </h1>
+           <div class="imgcontainer">
+             <img src={profile} alt="Avatar" class="avatar"/>
+            </div>
            <lable htmlFor="name">UserName</lable>
            <input type="text" placeholder="Enter userName" name="name" value={name} onChange={onChange}/>
          
